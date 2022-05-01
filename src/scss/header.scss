@@ -1,4 +1,96 @@
 //====================================================================================================
+//========================================================================================================================================================
+.header {
+	//padding-top: rem(31);
+	@include adaptiveValue("padding-top", 31, 25);
+	//padding-bottom: rem(31);
+	@include adaptiveValue("padding-bottom", 31, 25);
+	background: #f3fde5; // не забыть убрать
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10;
+	// .header__container
+	&__container {
+		position: relative;
+		display: flex;
+		align-items: center;
+	}
+	// .header__row
+	&__content {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;		
+	}
+	// .header__logo
+	&__logo {		
+		position: relative;
+		z-index: 5;
+		height: rem(23);
+		width: rem(80);
+		@include adaptiveValue("margin-right", 172, 25);
+	}
+	// .header__menu
+	&__menu {
+		//display: flex;
+		//flex: 0 1 auto;
+	}
+	// .header__login
+	&__login {
+
+		//justify-content: flex-end;
+		> * + * { // для каждого добавленного любого элемента будет отступ слева
+			margin-left: rem(25);
+		}
+		//margin-left: auto; // чтобы кнопки уехали вправо, вместо justify-content: space-between; в .header__row
+	}
+	// .header__btn-sign
+	&__btn-sign { 
+		padding: rem(10);
+		color: #000;
+		//margin-right: rem(35); // вместо этого в .header__login
+		transition: all 0.3s ease 0s;
+		&:hover	{
+			color: #01996D;			
+		}
+	}
+	// .header__btn-start
+	&__btn-start {
+		padding: rem(12) rem(50);
+	}
+}
+
+.menu {
+	color: #292929;
+	font-weight: 500;
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		row-gap: rem(20);
+		@include adaptiveValue("column-gap", 70, 30);
+	}
+	/*
+	li + li { // как вариант вместо gap
+		margin-left: rem(70);
+	}*/
+	// .menu__list
+	&__list {
+	}
+	// .menu__link
+	&__link {
+		padding: rem(10);
+		transition: all 0.3s ease 0s;
+		&:hover {
+			color: #01996D;
+		}
+	}
+	// .menu__icon
+	&__icon {
+	}
+}
+
+
 
 //====================================================================================================
 

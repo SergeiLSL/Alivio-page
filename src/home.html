@@ -1,17 +1,45 @@
 <!DOCTYPE html>
 <html lang="ru">
-	@@include('html/_head.htm',{
-	"title":"Главная"
-	})
-	<body>
-		<div class="wrapper">
-			@@include('html/_header.htm',{})
-			<main class="page">
-				Привет проект
-			</main>
-			@@include('html/_footer.htm',{})
-		</div>
-		@@include('html/_popup.htm',{})
-		@@include('html/_js.htm',{})
-	</body>
+@@include('html/_head.htm',{
+"title":"Alivio-page"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+			<section class="story">
+				<div class="story__container">
+					<div class="story__body">
+						<div class="story__content">
+							<div class="story__block-text block-text">
+								<h1 class="block-text__title">
+									Let's hear about Kayla's success story
+								</h1>
+								<div class="block-text__text">
+									See how well Alivio works in a real customer’s life.
+								</div>
+								<div class="block-text__btn">
+									<button type="button" class="block-text__btn btn">Let’s get started</button>
+								</div>
+							</div>
+						</div>
+						<div class="story__video">
+							<div class="story__video-overlay">
+								<button type="submit" class="story__video-button">
+									<img src="@img/story/play.svg" alt="Play">
+								</button>
+							</div>
+							<img class="story__video-object" src="@img/story/01.jpg" alt="Video">
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+</body>
+
 </html>
