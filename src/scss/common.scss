@@ -36,14 +36,21 @@ p + p { // рекомендуется в div все равно всаталят�
 //subtitle
 .subtitle {
 	font-family: "Georgia", serif;
-	font-size: rem(50);
 	font-weight: 700;
 	line-height: math.div(79, 50);
-	color: #01996D;
+	@include adaptiveValue("font-size", 50, 15);
+	line-height: math.div(79, 50);
+	@include adaptiveValue("margin-bottom", 33, 5);
+	@media (max-width: $mobile) {
+		@include adaptiveValue("font-size", 50,35);
+		@include adaptiveValue("margin-bottom", 33, 15);
 	}
+}
 //=============================================================================================
 // .text
 .text {
+	color: #424242;
+	font-size: rem(20);
 	font-weight: 500;
 	line-height: math.div(31, 20);
 	}	

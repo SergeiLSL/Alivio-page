@@ -9,29 +9,30 @@
 	&__container {
 		max-width: rem(1507);
 	}
-	// .hi__body
+	// .story__body
 	.story__body {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		flex-wrap: wrap;
 	}
-	// .hi__content
+	// .story__content
 	&__content {
 		flex: 0 1 38.5%;
 		padding: 0 0 0 0;
 		@media (max-width: $mobile) {
 			flex: 1 1 100%;
 			padding: 0;
+			margin-bottom: rem(50);
 		}
 	}
-	// .hi__block-text
-	&__block-text {
+	// .story__block-text
+	&__block-story-text {
 		@media (max-width: $mobile) {
 			margin-bottom: rem(60);
 		}
 	}
-	// .hi__image
+	// .story__image
 	&__video {
 		//display: flex;
 		flex: 0 1 59.4%;
@@ -72,19 +73,10 @@
 		}
 }
 
-.block-text {
+.block-story-text {	
 	color: #ffffff;
 	// .block-text__title
-	&__title {
-		font-family: "Georgia", serif;
-		font-weight: 700;
-		@include adaptiveValue("font-size", 50, 15);
-		line-height: math.div(79, 50);
-		@include adaptiveValue("margin-bottom", 33, 5);
-		@media (max-width: $mobile) {
-			@include adaptiveValue("font-size", 50,35);
-			@include adaptiveValue("margin-bottom", 33, 15);
-		}
+	&__subtitle {
 	}
 	// .block-text__text
 	&__text {
@@ -106,7 +98,172 @@
 }
 //== finish story section 3 ======================================================================================================================================================
 //====================================================================================================
-// старт hi section_1
+// старт product section 4 ===========================================================================
+.product {
+	//background: #daf9f6;
+	@include adaptiveValue("padding-top", 120, 50);
+	@include adaptiveValue("padding-bottom", 168, 60);
+	// .product__container
+	&__container {
+	}
+	// .product__body
+	&__body {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@media (max-width:$mobile){
+			flex-wrap: wrap;
+		}
+		//flex-wrap: wrap;
+	}
+	// .product__img-wrapper
+	// .product__image
+	&__image {
+		flex: 0 1 48.9%;
+		position: relative;
+		padding-left: rem(60); // чтобы карточка вписалась в контейнер
+		padding-bottom: rem(74); // чтобы карточка вписалась в контейнере
+		z-index: 2;
+		//margin-right: rem(87);
+		img {
+			max-width: 100%;
+			border-radius: rem(18);
+			overflow: hidden; //чтобы картинка вписывалась в радиус
+			//margin: 0 0 rem(30) 0;
+		}
+		@media (max-width: $mobile) {
+			flex: 1 1 100%;
+			text-align: center;
+			margin-bottom: rem(40);
+		}
+	}
+	// .product__content
+	&__content {
+		flex: 0 1 42.63%;
+		padding: 0 0 0 0;
+		@include adaptiveValue("margin-left", 86, 20);
+		@media (max-width: $mobile) {
+			flex: 1 1 100%;
+			padding: 0;
+		}
+	}
+	// .product__block-text
+	&__block-text {
+	}
+}
 
-// финиш hi section_1
+.block-text {
+	// .block-text__title
+	&__title {
+		font-family: "Lato", sans-serif;
+		font-weight: 600;		
+		@include adaptiveValue("font-size", 25, 15);
+		line-height: math.div(39, 25);
+		color: #424242;
+		margin-bottom: rem(10);
+	}
+	// .block-text__subtitle
+	&__subtitle {// все, что после заголовка отступ 20px
+		color: #01996D;
+		//@include adaptiveValue("font-size", 50, 15);
+		+ * {
+			margin-top: rem(20);
+		}
+	}
+	// .block-text__text
+	&__text {
+		color: #484848;
+		+ * {
+		margin-top: rem(35);
+		}
+	}
+	// .block-text__btn
+	&__btn {
+	}
+}
+
+.card {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: rem(296);
+	background-color: #fff;
+	border-radius: rem(4);
+	box-shadow: 0 rem(3.62249) rem(18.1125) rgba(165, 165, 165, 0.25);
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	//align-items: center;
+	padding: rem(23) rem(20) rem(30);
+	// .card__avatar-elements
+	&__avatar-elements {		
+	}
+	// .card__title
+	&__title {
+		position: relative;
+		font-weight: 600;
+		font-size: rem(14);
+		line-height: math.div(23, 14);
+		padding-bottom: rem(7);
+		margin-bottom: rem(14);
+		&::after {
+			content: '';
+			position: absolute;
+			background-color: #000;
+			height: rem(0.75);
+			left: rem(75);
+			right: rem(75);
+			bottom: 0;
+		}
+	}
+	// .card__avatar
+	&__avatar {
+	}
+	// .card__avatar-element
+	&__avatar-element {
+	}
+	// .card__image
+	&__image {
+		width: rem(57);
+		height: rem(57);
+		object-fit: cover;
+		border-radius: 50%;
+		margin-bottom: rem(10);
+	}
+	// .card__name
+	&__name {
+		font-size: rem(11.9351);		
+		line-height: math.div(19, 11.9351);
+		margin-bottom: rem(20);
+	}
+	// .card__contents
+	&__contents {
+		color: #000;
+		text-align-last: left;
+		padding-left: rem(6);
+	}
+	// .card__content-title
+	&__content-title {
+		font-family: "Georgia", serif;	
+		font-weight: 700;
+		font-size: rem(16);
+		line-height: math.div(25, 16);
+		margin-bottom: rem(16);
+	}
+	// .card__items
+	&__items {
+		font-size: rem(10.62);
+		line-height: math.div(17, 10.62);
+		list-style-type: disc; // по идее возвращаем маркеры
+		list-style-position: inside; // по идее возвращаем маркеры
+		//text-align: left;
+	}
+	// .card__item
+	&__item {
+		+ * {
+			margin-top: rem(16);
+		}
+	}
+}
+// финиш product section 4
 //=============================================
