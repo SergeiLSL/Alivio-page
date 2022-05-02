@@ -14,14 +14,17 @@
 	// .header__container
 	&__container {
 		position: relative;
-		display: flex;
+		//display: flex;
 		align-items: center;
 	}
 	// .header__row
 	&__content {
 		display: flex;
 		align-items: center;
-		justify-content: space-between;		
+		//justify-content: space-between;		
+	}
+	&__element {
+
 	}
 	// .header__logo
 	&__logo {		
@@ -34,11 +37,10 @@
 	// .header__menu
 	&__menu {
 		//display: flex;
-		//flex: 0 1 auto;
+		flex: 0 1 auto;
 	}
 	// .header__login
-	&__login {
-
+	&__login {		
 		//justify-content: flex-end;
 		> * + * { // для каждого добавленного любого элемента будет отступ слева
 			margin-left: rem(25);
@@ -47,6 +49,7 @@
 	}
 	// .header__btn-sign
 	&__btn-sign { 
+		margin-left: rem(195);
 		padding: rem(10);
 		color: #000;
 		//margin-right: rem(35); // вместо этого в .header__login
