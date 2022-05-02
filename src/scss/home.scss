@@ -84,7 +84,8 @@
 	}
 	// .works__header
 	&__header {
-		background: #f2fde5; // не забыть убрать
+		background: #f2fde5; // не забыть убрать	
+		margin-bottom: rem(52);	
 	}
 	// .works__title
 	&__title {
@@ -129,15 +130,7 @@
 
 //================================================
 .steps {
-	margin-top: rem(30);
-	&__row {
-		display: flex;
-		//justify-content: space-between;
-		@media (max-width:$mobile){
-			flex-wrap: wrap;
-			justify-content: center;  
-		}
-	}
+	//margin-top: rem(30);
 	&__row {
 		display: flex;
 		justify-content: space-between;	
@@ -145,13 +138,10 @@
 		margin: 0 rem(-15);	
 		@media (max-width:$tablet){
 			flex-wrap: wrap;
-			justify-content: center;  
 		}
 		@media (max-width:$mobile){
-			//flex-wrap: wrap;
-			//justify-content: center;  
+			justify-content: center;;
 		}
-		//flex-wrap: wrap;
 	}
 	&__column {
 		flex: 0 1 33.333%;
@@ -170,7 +160,7 @@
 		}
 	}
 	&__item {
-		background-color: #e7fff8;
+		background: #e5e5e5;
 		display: flex;
 		/*эти две строки чтобы прибить кнопку к низу и еще позволим блоку с текстом увеличиваться flex: 1 1 auto*/
 		flex-direction: column;
@@ -206,7 +196,6 @@
 	}
 
 }
-
 
 //== finish works section 2 ========================================================================
 //========================================================================================================================================================
