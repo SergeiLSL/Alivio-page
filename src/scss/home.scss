@@ -14,10 +14,7 @@
 	&__bg {
 		width: 100%;
 		@media (max-width:$mobile){
-			margin-bottom: 12%;
-		}
-		@media (max-width:$mobileSmall){
-			margin-bottom: 20%;  
+			@include adaptiveValue("padding-bottom", 30, 20);
 		}
 	}
 	// .home__container
@@ -27,15 +24,20 @@
 	// .home__text
 	&__content {
 		max-width: rem(480);
+		//margin-right: rem(10);	
 		position: absolute;
 		width: 100%;
 		padding: 0 rem(15);
-		left: 14.5%;
-		top: 30%;
-		transform: translate(-14.5%, -30%);
+		left: 13%;
+		top: 20%;
+		@media (max-width:$tablet){
+			left: 0%;
+			top: 10%;
+		}
+		//transform: translate(-14.5%, -30%);
 		@media (max-width:$mobile){
 			position: relative;
-			max-width: rem(767);
+			max-width: rem(620);
 		}
 	}
 	// .home__title
@@ -43,12 +45,13 @@
 		font-family: "Georgia", serif;
 		font-weight: 700;
 		line-height: math.div(74, 65);
-		color: #01996D;
-		@include adaptiveValue("font-size", 65, 30);
+		color: #01996D;	
+		@include adaptiveValue("margin-bottom", 30, 15);
+		@include adaptiveValue("font-size", 65, 20);
 		@media (max-width:$mobile){
 			font-size: rem(55);
-			@include adaptiveValue("font-size", 55, 35);
-			margin-top: rem(40);			
+			@include adaptiveValue("font-size", 55, 30);
+			//margin-top: rem(20);			
 		}		
 	}
 	// .home__desc
@@ -57,17 +60,19 @@
 		@include adaptiveValue("font-size", 20, 15);
 		line-height: math.div(31, 20);
 		color: #484848;
+		@include adaptiveValue("margin-bottom", 53, 20);
 		@media (max-width:$mobile){
 			margin-top: rem(20);
+			//@include adaptiveValue("padding-bottom", 30, 20);
 		}
 		+ * {
-			@include adaptiveValue("margin-top", 53, 25);
+			//@include adaptiveValue("margin-top", 53, 15);
 		}
 	}
 	// .home__button
 	&__button {
 		@media (max-width:$mobile){
-			margin-bottom: rem(-30);
+			margin-bottom: rem(30);
 		}
 	}
 	// .home__btn

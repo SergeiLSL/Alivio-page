@@ -2,6 +2,48 @@
 //========================================================================================================================================================
 .header {
 	//padding-top: rem(31);
+
+	// .header__container
+	&__container {
+
+	}
+	// .header__row
+	&__content {
+
+		//justify-content: space-between;		
+	}
+	&__element {
+
+	}
+	// .header__logo
+	&__logo {		
+
+	}
+	// .header__menu
+	&__menu {
+		//display: flex;
+		flex: 0 1 auto;
+	}
+	// .header__login
+	&__login {		
+		//justify-content: flex-end;
+
+		//margin-left: auto; // чтобы кнопки уехали вправо, вместо justify-content: space-between; в .header__row
+	}
+	// .header__btn-sign
+	&__btn-sign { 
+
+	}
+	// .header__btn-start
+	&__btn-start {
+
+	}
+}
+
+
+
+//========================================================================================================================================================
+.header {
 	@include adaptiveValue("padding-top", 31, 25);
 	//padding-bottom: rem(31);
 	@include adaptiveValue("padding-bottom", 31, 25);
@@ -17,50 +59,24 @@
 		//display: flex;
 		align-items: center;
 	}
-	// .header__row
+	// .header__content
 	&__content {
 		display: flex;
 		align-items: center;
-		//justify-content: space-between;		
-	}
-	&__element {
-
+		justify-content: space-between;
 	}
 	// .header__logo
-	&__logo {		
+	&__logo {
 		position: relative;
 		z-index: 5;
 		height: rem(23);
 		width: rem(80);
-		@include adaptiveValue("margin-right", 172, 25);
+		@include adaptiveValue("margin-right", 160, 25);
 	}
 	// .header__menu
 	&__menu {
-		//display: flex;
-		flex: 0 1 auto;
-	}
-	// .header__login
-	&__login {		
-		//justify-content: flex-end;
-		> * + * { // для каждого добавленного любого элемента будет отступ слева
-			margin-left: rem(25);
-		}
-		//margin-left: auto; // чтобы кнопки уехали вправо, вместо justify-content: space-between; в .header__row
-	}
-	// .header__btn-sign
-	&__btn-sign { 
-		margin-left: rem(195);
-		padding: rem(10);
-		color: #000;
-		//margin-right: rem(35); // вместо этого в .header__login
-		transition: all 0.3s ease 0s;
-		&:hover	{
-			color: #01996D;			
-		}
-	}
-	// .header__btn-start
-	&__btn-start {
-		padding: rem(12) rem(50);
+		display: flex;
+		align-items: center;
 	}
 }
 
@@ -70,7 +86,7 @@
 	ul {
 		display: flex;
 		flex-wrap: wrap;
-		row-gap: rem(20);
+		//row-gap: rem(20);
 		@include adaptiveValue("column-gap", 70, 30);
 	}
 	/*
@@ -87,6 +103,27 @@
 		&:hover {
 			color: #01996D;
 		}
+	}
+	// .menu__login
+	&__login {
+		> * + * { // для каждого добавленного любого элемента будет отступ слева
+			margin-left: rem(25);
+		}
+	}
+	// .menu__btn-sign
+	&__btn-sign {
+		margin-left: rem(195);
+		padding: rem(10);
+		color: #000;
+		//margin-right: rem(35); // вместо этого в .header__login
+		transition: all 0.3s ease 0s;
+		&:hover	{
+			color: #01996D;			
+		}
+	}
+	// .menu__btn-start
+	&__btn-start {
+		padding: rem(12) rem(50);
 	}
 	// .menu__icon
 	&__icon {
