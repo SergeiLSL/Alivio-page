@@ -12,19 +12,17 @@ mobileNavButton.addEventListener('click', function () {
 	mobileNav.classList.toggle('active');
 	document.body.classList.toggle('no-scroll');
 });
+//========================================================================================================================================================
+
 
 /* ================= VIDEO ========================= */
 const videoBtn = document.querySelector('#video-story-btn');
-// const videoBtnIcon = document.querySelector('#video-story-btn-icon');
-// const videoOverlay = document.querySelector('#video-story-overlay');
 const videoFile = document.querySelector('#video-story');
+const videoBtnIcon = document.querySelector('#video-story-btn-icon');
+const videoOverlay = document.querySelector('#video-story-overlay');
 
 
-videoBtn.addEventListener('click', function () {
-	videoFile.play();
-})
 
-/*
 videoBtn.addEventListener('click', function () {
 
 	function toggleOverlay(event){
@@ -45,9 +43,10 @@ videoBtn.addEventListener('click', function () {
 	} else {
 		videoFile.pause();
 		videoBtnIcon.src = '@img/story/play.svg';
+		
 		videoOverlay.onmouseleave = null;
 		videoOverlay.onmouseenter = null;
 
 	}
 
-})*/
+})

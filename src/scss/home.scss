@@ -217,123 +217,7 @@
 //== finish works section 2 ========================================================================
 //========================================================================================================================================================
 //== start story section 3 ======================================================================================================================================================
-// .story {
-// 	background: #245852;
-// 	@include adaptiveValue("padding-top", 229, 50);
-// 	@include adaptiveValue("padding-bottom", 177, 40);
-// 	// .story_container
-// 	&__container {
-// 		max-width: rem(1507);
-// 	}
-// 	// .story__body
-// 	.story__body {
-// 		display: flex;
-// 		align-items: center;
-// 		justify-content: space-between;
-// 		flex-wrap: wrap;
-// 	}
-// 	// .story__content
-// 	&__content {
-// 		flex: 0 1 38.5%;
-// 		padding: 0 0 0 0;
-// 		@media (max-width: $mobile) {
-// 			flex: 1 1 100%;
-// 			padding: 0;
-// 			margin-bottom: rem(50);
-// 		}
-// 	}
-// 	// .story__block-text
-// 	&__block-story-text {
-// 		@media (max-width: $mobile) {
-// 			margin-bottom: rem(60);
-// 		}
-// 	}
-// 	// .story__image
-// 	&__video {
-// 		//display: flex;
-// 		flex: 0 1 59.4%;
-// 		position: relative;
-// 		z-index: 2;
-// 		img {
-// 			max-width: 100%;
-// 			border-radius: rem(18);
-// 			overflow: hidden; //чтобы картинка вписывалась в радиус
-// 			//margin: 0 0 rem(30) 0;
-// 		}
-// 		@media (max-width: $mobile) {
-// 			flex: 1 1 100%;
-// 			text-align: center;
-// 			//margin: 0;
-// 		}
-// 	}
-// 	// .story__video-button
-// 	&__video-button {
-// 		position: absolute;
-// 		top: 50%;
-// 		left: 50%;
-// 		transform: translate(-50%, -50%); //смещение наполовину размера кнопки
-// 		width: rem(82);
-// 		height: rem(82);
-// 		}
-// 	// .story__video-overlay
-// 	&__video-overlay {
-// 		position: absolute;
-// 		left: 0;
-// 		top: 0;
-// 		width: 100%;
-// 		height: 100%;
-// 		background: rgba(0, 0, 0, 0.2);
-// 		}
-// 	// .hi__video-object
-// 	&__video-object {
-// 		max-width: 100%;
-// 		height: auto;
-// 		position: relative;
-// 		overflow: hidden;
-// 		height: 0;
-// 		padding-bottom: 56.25%;
-// 		video,
-// 		iframe,
-// 		object,
-// 		embed {
-// 			position: absolute;
-// 			top: 0;
-// 			left: 0;
-// 			width: 100%;
-// 			height: 100%;
-// 		}
-// 		img {
-// 			max-width: rem(895);
-// 			height: rem(504);
-// 		}
-// 	}
-// }
 
-// .block-story-text {	
-// 	color: #ffffff;
-// 	// .block-text__title
-// 	&__subtitle {
-// 	}
-// 	// .block-text__text
-// 	&__text {
-// 		font-weight: 600;
-// 		@include adaptiveValue("font-size", 25, 15);
-// 		line-height: math.div(39, 25);
-// 		@include adaptiveValue("margin-bottom", 57, 10);
-// 		@media (max-width: $mobile) {
-// 			@include adaptiveValue("font-size", 25,15);
-// 			@include adaptiveValue("margin-bottom", 57, 30);
-// 		}
-// 	}
-// 	// .block-text__btn
-// 	&__btn {
-// 	}
-// 	// .block-text__button
-// 	&__button {
-// 	}
-// }
-
-//========================================================================================================================================================
 .story {
 	background: #245852;
 	@include adaptiveValue("padding-top", 229, 50);
@@ -367,63 +251,47 @@
 	}
 	// .story__video
 	&__video {
-		//display: flex;
 		flex: 0 1 59.4%;
 		position: relative;
+		border-radius: 18px;
+		overflow: hidden;
+		max-width: rem(895);
 		z-index: 2;
-		img {
-			max-width: 100%;
-			border-radius: rem(18);
-			overflow: hidden; //чтобы картинка вписывалась в радиус
-			//margin: 0 0 rem(30) 0;
-		}
 		@media (max-width: $mobile) {
 			flex: 1 1 100%;
 			text-align: center;
-			//margin: 0;
 		}
 	}
 	// .story__video-overlay
 	&__video-overlay {
 		position: absolute;
+		z-index: 99;
 		left: 0;
 		top: 0;
-		border-radius: rem(18);
 		width: 100%;
 		height: 100%;
-		//background: rgba(0, 0, 0, 0.2);
+		background-color: rgba(0, 0, 0, 0.2);
+		transition: opacity 0.2s ease;
+		&.hidden {
+			opacity: 0;
 		}
+	}
 	// .story__video-button
 	&__video-button {
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%); //смещение наполовину размера кнопки
-		width: rem(82);
-		height: rem(82);
-		}
+	}
 	// .story__video-object
 	&__video-object {
 		max-width: 100%;
 		height: auto;
 		vertical-align: top;
-		border-radius: rem(18);
-		// position: relative;
-		// overflow: hidden;
-		// height: 0;
-		// padding-bottom: 56.25%;
-		video,
-		iframe,
-		object,
-		embed {
-			// position: absolute;
-			// top: 0;
-			// left: 0;
-			// width: 100%;
-			// height: 100%;
-		}
-	}
+	}	
 }
+
+//==================================================================
 
 .block-story-text {	
 	color: #ffffff;
