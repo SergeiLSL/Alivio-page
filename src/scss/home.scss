@@ -1,6 +1,6 @@
 //== start home section 1 ===========================================================================
 .home {
-	margin-top: rem(113);
+	margin-top: rem(84);
 	position: relative;
 	@media (max-width:$mobile){
 		//position: none; 
@@ -49,7 +49,7 @@
 		@include adaptiveValue("margin-bottom", 30, 15);
 		@include adaptiveValue("font-size", 65, 20);
 		@media (max-width:$mobile){
-			font-size: rem(55);
+			//font-size: rem(55);
 			@include adaptiveValue("font-size", 55, 30);
 			//margin-top: rem(20);			
 		}		
@@ -57,7 +57,7 @@
 	// .home__desc
 	&__desc {
 		max-width: rem(440);
-		@include adaptiveValue("font-size", 20, 15);
+		@include adaptiveValue("font-size", 20, 18);
 		line-height: math.div(31, 20);
 		color: #484848;
 		@include adaptiveValue("margin-bottom", 53, 20);
@@ -286,7 +286,23 @@
 		}
 	// .hi__video-object
 	&__video-object {
+		//max-width: 100%;
+		//height: auto;
+		position: relative;
+		overflow: hidden;
+		height: 0;
+		padding-bottom: 56.25%;
+		video,
+		iframe,
+		object,
+		embed {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
 		}
+	}
 }
 
 .block-story-text {	
