@@ -1,260 +1,202 @@
-//====================================================================================================
-//========================================================================================================================================================
+
 .header {
-	padding-top: rem(10);
-	padding-bottom: rem(10);
-	background: #f3fde5; // не забыть убрать
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 10;
+	padding-top: 17px;
+	padding-bottom: 17px;
+	border-bottom: 1px solid #d6d6d6;
+	background-color: #caf1e6; // убрать
+	line-height: 1;
 	// .header__container
 	&__container {
-		position: relative;
+	}
+	// .header__row
+	&__row {
 		display: flex;
 		align-items: center;
-		//border: 1px solid green;
-	}
-	// .header__content
-	&__content {
+		@media (max-width: $tablet) {
+			justify-content: space-between;
+		}
 	}
 	// .header__logo
 	&__logo {
-		position: relative;
-		z-index: 5;
-		width: rem(80);
-		height: rem(35);		
-		@include adaptiveValue("margin-right", 163, 0);
 	}
-	// .header__menu
-	&__menu {		
-		justify-content: flex-end;
+	// .header__nav
+	&__nav {
+		//margin-left: 172px;
+		@include adaptiveValue("margin-left", 172, -80);
+		font-weight: 500;
+		color: #292929;
+		ul {
+			display: flex;
+		}
+		li + li {
+			//margin-left: 70px;
+			@include adaptiveValue("margin-left", 70, 0);
+			@media (max-width: $tablet) {
+				margin-left: 42px;
+			}
+		}
+		a {
+			transition: color 0.2s ease;
+		}
+		a:hover {
+			color: #01996d;
+		}
+		@media (max-width: $tablet) {
+			margin-left: 30px;
+		}
+		@media (max-width: $tablet){
+			display: none; 
+		}	
 	}
-	// .header__button
-	&__button {		
-		//padding: rem(13) rem(50);
+	// .header__login
+	&__login {
+		display: flex;
+		align-items: center;
+		margin-left: auto;
+		> * + * {
+			margin-left: 35px;
+		}
+		@media (max-width: $tablet) {
+			margin-left: 30px;
+		}
+		@media (max-width:$tablet){
+			display: none; 
+		}
+	}
+	// .header__login-link
+	&__login-link {
+		//margin-top: -0px;
+		color: #000;
+		transition: color 0.2s ease;
+		&:hover {
+			color: #01996d;
+		}
+	}
+	// .header__btn
+	&__btn {
 		@include adaptiveValue("padding-left", 50, 10);
 		@include adaptiveValue("padding-right", 50, 10);
 		align-items: center;
-		@media (max-width:$tablet){
+		@media (max-width: $tablet) {
 			padding: rem(10) rem(25);
 			margin-right: rem(25);
 		}
 	}
-	&__button-w {
-		color: #000;
-		line-height: math.div(24, 20);
-		display: inline-flex;
-		padding: rem(19) rem(35);
-		@include adaptiveValue("margin-left", 80, -80);
-		transition: all 0.3s ease 0s;
-		&:hover {
-			text-decoration: underline;
-		}
-		@media (max-width:$tablet){
-			margin-left: 0;
-		}
 
-	}
-}
-
-.menu {
-	flex: 1 1 auto;
-	// .menu__icon
-	&__icon {
-		//чтобы заработало бургер, скроем menu icon
+	//====================================================
+	// .header__mobile-nav-button
+	&__mobile-nav-button {
+		cursor: pointer;
+		padding: 0;
+		border: none;
+		background: transparent;
+			/* Nav icon styles*/
+		position: relative;
+		z-index: 999;
+		width: 40px;
+		height: 30px;
+		/* display: flex; */
+		justify-content: center;
+		align-items: center;
 		display: none;
-	}
-	// .menu__body
-	&__body {
-	}
-	// .menu__list
-	&__list {
-		justify-content: flex-start;
-		> li {
-			word-wrap: break-word;
-			&:nth-child(1) {
-				margin-left: 0;
-			}
-			position: relative;			
-			@include adaptiveValue("margin-left", 70, 0);
-		}
-		@media (min-width: $mobile) {
+		@media (max-width: $tablet) {
 			display: flex;
-			align-items: center;
-			> li {
-				// эти отступы сверху/снизу расширяют область наведения мыши
-				padding: rem(10) 0;
-			}
 		}
 	}
-	// .menu__link
-	&__link {
-		color: #292929;
-		line-height: math.div(24, 20);
-		font-weight: 500;
-		&:hover {
-			text-decoration: underline;
+	// .header__mobile-nav-button-icon
+	&__mobile-nav-button-icon {
+		display: block;
+		position: relative;
+		width: 40px;
+		height: 4px;
+		background-color: #000;
+		&::after,
+		&::before {
+			position: absolute;
+			content: '';
+			width: 40px;
+			height: 4px;
+			background-color: #000;
+			/* Трансформация при закрывании */
+			transition: transform 0.15s ease-in, top 0.15s ease-in 0.15s;			
+		}
+		&::before {
+			left: 0;
+			top: -10px;
+		}
+		&::after {
+			left: 0;
+			top: 10px;
+		}
+
+		&.active {
+			background-color: transparent;
+		}
+		&.active::before {
+			transform: rotate(45deg);
+			top: 0;
+			/* Трансформация при открывании */
+			transition: top 0.15s linear, transform 0.15s ease-in 0.15s;
+		}
+		&.active::after {
+			transform: rotate(-45deg);
+			top: 0;
+			/* Трансформация при открывании */
+			transition: top 0.15s linear, transform 0.15s ease-in 0.15s;
 		}
 	}
 }
-
 
 //========================================================================================================================================================
-@media (max-width: $tablet) {
-	.menu__icon {
-		display: block;
-		z-index: 5;
-		position: relative;
-		width: rem(30);
-		height: rem(18);
-		cursor: pointer;
-		span,
-		&::before,
-		&::after {
-			content: "";
-			transition: all 0.3s ease 0s;
-			right: 0;
-			position: absolute;
-			width: 100%;
-			height: rem(2);
-			background-color: #000;
+.mobile-nav {
+	display: none;	
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 1);
+
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    //justify-content: space-between;
+    padding: 40px 15px;
+
+    text-align: center;
+	&.active {
+		display: flex;
+	}
+	// .mobile-nav__logo
+	&__logo {
+		margin-top: rem(50);
+		margin-bottom: rem(30);
+	}
+	// .mobile-nav__list
+	&__list {
+		font-size: 22px;
+		li + li {
+			margin-top: 20px;
 		}
-		&::before,
-		&::after {
-			content: "";
-		}
-		&::before {
-			top: 0;
-		}
-		&::after {
-			bottom: 0;
-		}
-		span {
-			// добавляем среднюю полоску
-			top: 50%;
-			transform: scale(1) translate(0, -50%);
-			//top: calc(50% - rem(1)); // заменяет эти две записи
-		}
+		margin-bottom: rem(60);
 	}
-
-	.menu__icon._active span {
-		// убираем среднюю полоску при классе _active
-		transform: scale(0) translate(0, -50%);
-	}
-
-	.menu__icon._active::before {
-		// поворачиваем верхнюю полоску при классе _active
-		top: 50%;
-		transform: rotate(-45deg) translate(0, -50%);
-	}
-
-	.menu__icon._active::after {
-		// поворачиваем нижнюю полоску при классе _active
-		bottom: 50%;
-		transform: rotate(45deg) translate(0, 50%);
-	}
-
-	// по идее сверху это закоментированный код бургера
-	.menu__body {
-		position: fixed;
-		top: 0;
-		left: -100%;
-		width: 100%;
-		height: 100%;
-		color: #000;
-		background-color: rgba(255, 255, 255, 1);
-		padding: rem(200) rem(30) rem(30) rem(30);
-		text-align: center;
-		transition: left 0.3s ease 0s; // убираем за экран влево
-		overflow: auto; // обязательно добавить, чтобы появлялся скролл, если меню не будет помещаться на экране
-	}
-
-	.menu__body._active {
-		left: 0%;
-	}
-
-	.menu__body::before {
-		// чтобы меню уходило под плашку header
-		content: "";
-		position: fixed;
-		width: 100%;
-		top: 0;
-		left: 0;
-		height: rem(70);
-		//background-color: #912105;
-		z-index: 2;
-	}
-
-	.menu__list > li {
-		//flex-wrap: wrap;
-		margin: 0 0 rem(40) 0;
-		:last-child {
-			margin-bottom: 0;
+	// .mobile-nav__login
+	&__login {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 22px;
+		& > * + * {
+			margin-left: 30px;
 		}
 	}
-	.menu__list > li._active .menu__sub-list {
-		display: block;
-	}
-	.menu__link {
-		font-size: rem(30);
+	// .mobile-nav__btn
+	&__btn {
 	}
 }
-//==============================================================
-// финиш меню бургер
+
+//========================================================================================================================================================
 
 
 
-//====================================================================================================
-
-//Burger
-/*
-.icon-menu {
-	display: none;
-	@media (max-width: $mobile) {
-		display: block;
-		position: relative;
-		width: rem(30);
-		height: rem(18);
-		cursor: pointer;
-		z-index: 5;
-		span,
-		&::before,
-		&::after {
-			content: "";
-			transition: all 0.3s ease 0s;
-			right: 0;
-			position: absolute;
-			width: 100%;
-			height: rem(2);
-			background-color: #000;
-		}
-		&::before {
-			top: 0;
-		}
-		&::after {
-			bottom: 0;
-		}
-		span {
-			top: calc(50% - rem(1));
-		}
-		.menu-open & {
-			span {
-				width: 0;
-			}
-			&::before,
-			&::after {
-			}
-			&::before {
-				top: calc(50% - rem(1));
-				transform: rotate(-45deg);
-			}
-			&::after {
-				bottom: calc(50% - rem(1));
-				transform: rotate(45deg);
-			}
-		}
-	}
-}
-*/
