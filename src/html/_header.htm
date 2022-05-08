@@ -1,18 +1,38 @@
-<header data-lp class="header">
-	<div class="header__container ">
-		<a href="" class="header__logo"><img src="@img/header/logo.svg" alt="logo"></a>
-		<div class="header__menu menu">
-			<nav class="menu__body">
-				<ul class="menu__list">
-					<li><a href="#" class="menu__link">Why Alivio</a></li>
-					<li><a href="#" class="menu__link">Solutions</a></li>
-					<li><a href="#" class="menu__link">Community</a></li>
-					<li><a href="#" class="menu__link">Pricing</a></li>
+<header class="header">
+	<div class="header__container">
+		<div class="header__row">
+			<div class="header__logo"><img src="@img/header/logo.svg" alt="Logo" /></div>
+			<nav class="header__nav">
+				<ul>
+					<li><a href="#">Why Alivio</a></li>
+					<li><a href="#">Solutions</a></li>
+					<li><a href="#">Community</a></li>
+					<li><a href="#">Pricing</a></li>
 				</ul>
 			</nav>
+			<div class="header__login">
+				<a class="header__login-link" href="#">Sign in</a>
+				<a href="#" class="header__btn btn">Start Trial</a>
+			</div>
+			<button type="button" class="header__mobile-nav-button">
+				<span class="header__mobile-nav-button-icon"></span>
+			</button>
 		</div>
-		<button type="button" class="header__button-w">Sign in</button>
-		<button type="button" class="header__button btn">Start Trial</button>
-		<div class="menu__icon icon-menu"><span></span></div>
 	</div>
 </header>
+
+<div class="mobile-nav">
+	<img class="mobile-nav__logo" src="@img/header/logo.svg" alt="Logo" />
+	<nav class="mobile-nav__list">
+		<ul>
+			<li><a href="#">Why Alivio</a></li>
+			<li><a href="#">Solutions</a></li>
+			<li><a href="#">Community</a></li>
+			<li><a href="#">Pricing</a></li>
+		</ul>
+	</nav>
+	<div class="mobile-nav__login">
+		<a class="" href="#">Sign in</a>
+		<a href="#" class="mobile-nav__btn btn">Start Trial</a>
+	</div>
+</div>

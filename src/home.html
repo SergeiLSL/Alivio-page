@@ -8,7 +8,7 @@
 	<div class="wrapper">
 		@@include('html/_header.htm',{})
 		<main class="page">
-			<section class="home none">
+			<section class="home">
 				<div class="home__foto">
 					<img src="@img/home/bg.jpg" class="home__bg ibg" alt="cover">
 					<div class="home__container">
@@ -26,7 +26,7 @@
 				</div>
 			</section>
 
-			<section class="works none">
+			<section class="works">
 				<div class="works__container">
 					<div class="works__header">
 						<div class="works__title title">How it works</div>
@@ -124,14 +124,15 @@
 								</div>
 							</div>
 						</div>
-
 						<div class="story__video">
-							<div class="story__video-overlay">
-								<button type="submit" class="story__video-button">
-									<img src="@img/story/play.svg" alt="Play">
+							<div id="video-story-overlay" class="story__video-overlay">
+								<button id="video-story-btn" type="submit" class="story__video-button">
+									<img id="video-story-btn-icon" width="82" height="82" src="@img/story/play.svg" alt="Play">
 								</button>
 							</div>
-							<img class="story__video-object" src="@img/story/01.jpg" alt="Video">
+							<video class="story__video-object" id="video-story">
+								<source src="@img/video/customer-story.mp4" type="video/mp4">
+							</video>
 						</div>
 
 					</div>
