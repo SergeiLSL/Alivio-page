@@ -22,10 +22,9 @@ const videoBtnIcon = document.querySelector('#video-story-btn-icon');
 const videoOverlay = document.querySelector('#video-story-overlay');
 
 
-
 videoBtn.addEventListener('click', function () {
 
-	function toggleOverlay(event){
+	function toggleOverlay(event) {
 		if (event.type === 'mouseleave') {
 			videoOverlay.classList.add('hidden');
 		} else {
@@ -43,10 +42,11 @@ videoBtn.addEventListener('click', function () {
 	} else {
 		videoFile.pause();
 		videoBtnIcon.src = '@img/story/play.svg';
-		
+
 		videoOverlay.onmouseleave = null;
 		videoOverlay.onmouseenter = null;
 
 	}
+
 
 })
